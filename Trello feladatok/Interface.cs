@@ -6,49 +6,49 @@ using System.Threading.Tasks;
 
 namespace Trello_feladatok_2
 {
+    interface IVehicle
+    {
+        void Start();
+        void Stop();
+    }
+    
+    class Car : IVehicle
+    {
+        public string Color { get; set; }
+        public string Brand { get; set; }
+        public string Status { get; set; }
+    
+        public void Start()
+        {
+            Console.WriteLine("Starting the car.");
+        }
+    
+        public void Stop()
+        {
+            Console.WriteLine("Stopping the car.");
+        }
+    }
+    
+    class Plane : IVehicle
+    {
+        public string Color { get; set; }
+        public string Brand { get; set; }
+        public string Type { get; set; }
+        public string Capacity { get; set; }
+    
+        public void Start()
+        {
+            Console.WriteLine("WE ARE GOING TO FLY YEAH");
+        }
+    
+        public void Stop()
+        {
+            Console.WriteLine("DOWN DOWN DOWN TO EARTH");
+        }
+    }
+
     class Program
     {
-        interface IVehicle
-        {
-            void Start();
-            void Stop();
-        }
-
-        class Car : IVehicle
-        {
-            public string Color { get; set; }
-            public string Brand { get; set; }
-            public string Status { get; set; }
-
-            public void Start()
-            {
-                Console.WriteLine("Starting the car.");
-            }
-
-            public void Stop()
-            {
-                Console.WriteLine("Stopping the car.");
-            }
-        }
-
-        class Plane : IVehicle
-        {
-            public string Color { get; set; }
-            public string Brand { get; set; }
-            public string Type { get; set; }
-            public string Capacity { get; set; }
-
-            public void Start()
-            {
-                Console.WriteLine("WE ARE GOING TO FLY YEAH");
-            }
-
-            public void Stop()
-            {
-                Console.WriteLine("DOWN DOWN DOWN TO EARTH");
-            }
-        }
-
         static void Main(string[] args)
         {
             IVehicle[] vehicles = new IVehicle[5];
